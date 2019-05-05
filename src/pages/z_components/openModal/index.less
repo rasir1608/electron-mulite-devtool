@@ -1,0 +1,34 @@
+:global {
+  .work-list-wrap {
+    &:focus {
+      outline: 0;
+    }
+
+    .wrok-list-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-bottom: 1px dashed #dddddd;
+
+      .item-open {
+        flex: 1;
+        cursor: pointer;
+
+        >i {
+          margin: 0 5px;
+        }
+      }
+
+      .item-actions {
+        flex: 0 0 50px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+
+        >i {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

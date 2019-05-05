@@ -1,0 +1,224 @@
+html,
+body,
+:global(#root) {
+  height: 100%;
+  line-height: 1;
+  font-family: 'PingFangSC-Medium', 'PingFangSC-Regular', 'Microsoft YaHei';
+  font-size: 14px;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+canvas {
+  display: block;
+}
+
+body {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  :global {
+    .charts {
+      height: 300px;
+      width: 300px;
+    }
+
+    /* 修改布局 */
+    // min-height: 100%;
+    .ant-layout {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      button.ant-btn-primary {
+        background-color: #4b84ff;
+        border-color: #4b84ff;
+        &[disabled] {
+          background-color: #f5f5f5;
+          border-color: #d9d9d9;
+        }
+      }
+      .ant-layout-header {
+        padding: 0;
+      }
+      .ant-layout-content {
+        flex: 1;
+        display: flex;
+        margin: 12px;
+        .bdp-page-content {
+          flex: 1;
+          display: flex;
+          width: 100%;
+          flex-direction: column;
+          .bdp-content {
+            flex: 1;
+            background: #fff;
+            overflow-y: auto;
+            position: relative;
+            &.modelDetails {
+              background: #f0f2f5;
+              border-top-left-radius: 4px;
+              overflow: initial;
+            }
+          }
+        }
+      }
+    }
+    .bdp-form {
+      max-width: 700px;
+      // padding-top: 75px;
+      &.top {
+        padding-top: 54px;
+      }
+      margin: 0 auto;
+    }
+    .bdp-btn-group {
+      display: flex;
+      justify-content: space-between;
+      margin: 0 auto 18px;
+      &.center {
+        justify-content: center;
+      }
+    }
+  }
+  :global(.ant-btn) {
+    height: 30px;
+    padding: 0 10px;
+  }
+  :global(.ant-dropdown-menu-item),
+  :global(.ant-dropdown-menu-submenu-title) {
+    color: #333;
+  }
+
+  ul,
+  li,
+  ol,
+  dl {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+.globalSpin {
+  width: 100%;
+  margin: 40px 0 !important;
+}
+
+// temp fix for https://github.com/ant-design/ant-design/commit/a1fafb5b727b62cb0be29ce6e9eca8f579d4f8b7
+:global {
+  .elog-tip {
+    .ant-tooltip-content {
+      box-shadow: 0 0 120px rgba(0, 0, 0, 0.2);
+      .ant-tooltip-arrow {
+        border-color: rgba(255, 255, 255, 0.897);
+        border-width: 1px;
+        width: 22px;
+        height: 0;
+        border-bottom: 12px solid rgba(255, 255, 255, 0.897);
+        border-left: 20px solid transparent;
+        border-right: 11px solid transparent;
+        border-top: 8px solid transparent;
+        transform: rotateZ(-38deg) translateY(4px);
+      }
+      .ant-tooltip-inner {
+        background: #ffffff;
+        box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2);
+        border-radius: 4px;
+        font-size: 12px;
+        color: #636363;
+      }
+    }
+  }
+  .ant-spin-container {
+    overflow: visible !important;
+  }
+  .bdpicon-md {
+    height: 20px;
+    width: 20px;
+    // box-sizing: content-box
+  }
+
+  // 弹出层 样式
+  .z-modal {
+    .ant-modal-header {
+      border-bottom: none;
+      .ant-modal-title {
+        font-size: 16px;
+        color: #333;
+        font-weight: normal;
+      }
+    }
+    .ant-modal-body {
+      padding-top: 5px;
+    }
+    .ant-modal-footer {
+      border-top: none;
+    }
+  }
+  .z-form {
+    .ant-form-item-required {
+      &::before,
+      &::after {
+        content: '' !important;
+      }
+    }
+    .z-fix-radio {
+      flex: 0 0;
+    }
+    p {
+      font-weight: 600;
+      font-size: 15px;
+      color: #333;
+      letter-spacing: 0;
+      line-height: 15px;
+      // padding-left: 12%;
+    }
+    .z-rate {
+      line-height: 36px;
+      padding-left: 10px;
+      flex: 3;
+    }
+  }
+  // flex布局
+  .z-form-flex {
+    display: flex;
+
+    .label {
+      font-size: 14px;
+      color: #333;
+      line-height: 36px;
+      padding-right: 16px;
+    }
+    .content {
+      flex: 1;
+      display: flex;
+      .ant-form-item {
+        flex: 1;
+      }
+      .z-form-item-2 {
+        flex: 2;
+      }
+    }
+  }
+}
+
+::-webkit-scrollbar {
+  width: 9px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track-piece {
+  background-color: rgba(0, 0, 0, 0.2);
+  -webkit-border-radius: 6px;
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:horizontal,
+::-webkit-scrollbar-thumb:vertical {
+  width: 9px;
+  background-color: rgba(125, 125, 125, 0.7);
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
+}

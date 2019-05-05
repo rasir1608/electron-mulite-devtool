@@ -1,0 +1,5 @@
+**/*.md
+**/*.svg
+**/*.html
+src/assets/*.js
+package.json
