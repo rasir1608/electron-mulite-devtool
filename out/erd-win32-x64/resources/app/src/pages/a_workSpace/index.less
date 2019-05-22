@@ -1,0 +1,113 @@
+:global {
+  .work-space-wrap {
+    flex: 1;
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+
+    .ant-tabs {
+      flex: 1;
+      background: #ffffff;
+      display: flex;
+      flex-direction: column;
+
+
+      .ant-tabs-bar {
+        flex: 0 0 45px;
+
+      }
+
+      .ant-tabs-content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+
+        .ant-tabs-tabpane {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+
+          &.ant-tabs-tabpane-inactive {
+            display: none;
+          }
+        }
+
+        .tab-actions {
+          flex-shrink: 0;
+          display: flex;
+          width: 100%;
+          align-items: center;
+          height: 30px;
+
+          >i {
+            margin: 0 10px;
+            cursor: pointer;
+
+            &:hover {
+              svg {
+                fill: #008dff
+              }
+            }
+          }
+        }
+
+        .tab-contents {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+
+          .work-space-code {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            min-height: 100px;
+
+            &.log-code {
+              flex: 2;
+            }
+
+            pre {
+              margin: 0;
+            }
+
+            p {
+              margin: 0;
+              padding: 5px 0;
+            }
+
+            h3 {
+              margin: 0;
+              padding: 5px 0;
+            }
+
+            h3 {
+              flex-shrink: 0;
+              font-weight: bold;
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+            }
+
+            .code-block {
+              flex: 1;
+              margin: 5px 0;
+              background: #f6f8fa;
+              overflow: auto;
+
+              .code-node {
+                padding: 10px;
+                white-space: pre-wrap;
+                word-break: break-all;
+              }
+
+              textarea {
+                height: 100%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
