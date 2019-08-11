@@ -4,7 +4,6 @@ import { Form, Input, Button, Modal, message } from 'antd';
 import { Link, routerRedux } from 'dva/router';
 import './b_signin.less';
 
-
 const FormItem = Form.Item;
 
 @Form.create()
@@ -25,10 +24,9 @@ class Signup extends React.PureComponent {
         return;
       }
       const ret = await dispatch({
-        type:'user/signup',
-        payload:{password,userName}
+        type: 'user/signup',
+        payload: { password, userName },
       });
-      console.log(34,ret)
       const { msg, ok } = ret;
       if (ok) {
         Modal.success({

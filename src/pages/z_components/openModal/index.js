@@ -6,8 +6,6 @@ import './index.less';
 
 @connect(({ work: { allWorkList } }) => ({ allWorkList }))
 class OpenModal extends React.PureComponent {
-  state = { allWorkList: [] };
-
   componentDidUpdate(preProps) {
     const { modalType: preModalType } = preProps;
     const { modalType } = this.props;
@@ -18,12 +16,9 @@ class OpenModal extends React.PureComponent {
 
   getAllWorkList = async () => {
     const { dispatch } = this.props;
-    await this.setState({ allWorkList: [] });
-    const allWorkList =
-      (await dispatch({
-        type: 'work/queryWorkList',
-      })) || [];
-    await this.setState({ allWorkList });
+    await dispatch({
+      type: 'work/queryWorkList',
+    });
   };
 
   openWorkSpace = workspace => {
@@ -56,8 +51,7 @@ class OpenModal extends React.PureComponent {
   };
 
   listRowRenderer = ({ key, index, style }) => {
-    const { allWorkList = [] } = this.state;
-    const { onEdite = () => {} } = this.props;
+    const { onEdite = () => {}, allWorkList = [] } = this.props;
     return (
       <div
         key={key}
@@ -84,8 +78,7 @@ class OpenModal extends React.PureComponent {
   };
 
   render() {
-    const { modalType = 'none', onClose = () => {} } = this.props;
-    const { allWorkList = [] } = this.state;
+    const { modalType = 'none', onClose = () => {}, allWorkList } = this.props;
     return (
       <Modal
         title="打开会话"

@@ -28,8 +28,14 @@ export default {
       const ret = yield call(saveWorkSpace, payload);
       return ret;
     },
-    *queryWorkList({ payload }, { call }) {
+    *queryWorkList({ payload }, { call, put }) {
       const ret = yield call(queryWorkList, payload);
+      yield put({
+        type: 'update',
+        payload: {
+          allWorkList: ret || [],
+        },
+      });
       return ret;
     },
     *checkWorkName({ payload }, { call }) {

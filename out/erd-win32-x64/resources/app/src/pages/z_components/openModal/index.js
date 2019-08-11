@@ -56,8 +56,7 @@ class OpenModal extends React.PureComponent {
   };
 
   listRowRenderer = ({ key, index, style }) => {
-    const { allWorkList = [] } = this.state;
-    const { onEdite = () => {} } = this.props;
+    const { onEdite = () => {}, allWorkList } = this.props;
     return (
       <div
         key={key}

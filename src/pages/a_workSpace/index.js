@@ -17,7 +17,6 @@ class WorkSpace extends React.PureComponent {
     ipcRenderer.on('runWorkResult', (e, work) => {
       const { tabWorkList, dispatch } = this.props;
       const index = tabWorkList.findIndex(({ _id }) => _id === work._id);
-      console.log(20, index, tabWorkList);
       if (index < 0) return;
       tabWorkList[index] = {
         ...tabWorkList[index],
@@ -170,8 +169,6 @@ class WorkSpace extends React.PureComponent {
                 <Icon type="play-circle" title="运行" onClick={this.startWork} />
                 {activeWork.pid && <Icon type="stop" title="停止" onClick={this.stopWork} />}
                 <Icon type="retweet" title="重新运行" />
-                {/* <Icon type="redo" title="重做" /> */}
-                {/* <Icon type="undo" title="撤销" /> */}
                 {activeWork.url && (
                   <Button type="primary" onClick={this.openInBower}>
                     在浏览器中打开

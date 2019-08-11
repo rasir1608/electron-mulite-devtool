@@ -27,7 +27,6 @@ class NavMenu extends React.PureComponent {
   state = {};
 
   handleClick = ({ key }) => {
-    console.log(11, key);
     const { onChange = () => {} } = this.props;
     onChange(key);
   };
